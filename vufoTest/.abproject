@@ -1,0 +1,45 @@
+{
+  "ProjectName": "vufoTest",
+  "ProjectGuid": "66d1377a-2a9f-4359-9713-b8720b8ce869",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.vufoTest",
+  "DisplayName": "vufoTest",
+  "Author": "",
+  "Description": "vufoTest",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "4.0.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "true",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{fc135ffe-a313-47ef-96b1-c8f6773b1e1c}",
+  "WP8ProductID": "{fc3b01d0-dc15-4add-8f04-d044cc5eb8e7}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.vufoTest",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
