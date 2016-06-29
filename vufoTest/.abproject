@@ -14,8 +14,12 @@
   ],
   "iOSBackgroundMode": [],
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "FrameworkVersion": "4.0.0",
+  "FrameworkVersion": "5.0.0",
   "AndroidPermissions": [
+    "android.permission.CAMERA",
+    "android.permission.CAPTURE_AUDIO_OUTPUT",
+    "android.permission.CAPTURE_SECURE_VIDEO_OUTPUT",
+    "android.permission.CAPTURE_VIDEO_OUTPUT",
     "android.permission.INTERNET"
   ],
   "DeviceOrientations": [

@@ -31,20 +31,62 @@ var app = {
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
+    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        navigator.splashscreen.hide();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        document.getElementById('start-vuforia').onclick = function () {
+            app.startVuforia();
+        };
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        document.getElementById('start-and-stop-vuforia').onclick = function () {
+            app.startVuforia();
 
-        console.log('Received Event: ' + id);
+            console.log('Starting timer...');
+
+            // Wait for a timeout, then automatically stop Vuforia
+            setTimeout(function(){
+                app.stopVuforia();
+            }, 5000);
+        };
+
+        document.getElementById('stop-vuforia').onclick = function () {
+            app.stopVuforia();
+        }
+    },
+    // Start the Vuforia plugin
+    startVuforia: function(){
+        navigator.VuforiaPlugin.startVuforia(
+            'www/targets/StonesAndChips.xml',
+            [ 'stones', 'chips' ],
+            'Point your camera at a test image...',
+            'AXS9OVT/////AAAAATStnsnnbEO1kRZ4TqvtXQ5LsMDYdBArHiQXGEV90mrNq7vT4yN+uIELTozmJgdzC38rzKY5Y/0wRjo3kIsegKdgidnaEQ6TJ2qp/frENI9cI2icfrHdJZwjJj2AIdUHXlUmQuAsTnTineiv+kALk12YKPOLfiX3zoxOhLWLKk14P/LpsJb9f/+vlrARLe7FCRV6ZYVJiiOzMQ3dCakSS0d/JrtBv04wtEbgiy5QUGWKIC07IH3hNGg0vlsn/5pfA8vlirMxasrPxJLzbSEz/UKKn9gQ1l34RCdcSLp6REUnCyq0PuOaE1VcO6gje1uYwmg/zQ7OqRY9PJMSms/Tu2OfGZuMP2bBnYZ3WS63Tlg4',
+            function(data){
+                console.log(data);
+                alert("Image found: "+data.imageName);
+            },
+            function(data) {
+                alert("Error: " + data);
+            }
+        );
+    },
+    // Stop the Vuforia plugin
+    stopVuforia: function(){
+        navigator.VuforiaPlugin.stopVuforia(function (data) {
+            console.log(data);
+
+            if (data.success == 'true') {
+                alert('TOO SLOW! You took too long to find an image.');
+            } else {
+                alert('Couldn\'t stop Vuforia\n'+data.message);
+            }
+        }, function (data) {
+            console.log("Error stopping Vuforia:");
+            console.log(data);
+        });
     }
 };
+
+app.initialize();
