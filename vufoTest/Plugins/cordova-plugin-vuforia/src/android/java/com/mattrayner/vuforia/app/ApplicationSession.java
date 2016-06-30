@@ -18,17 +18,17 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.R;
 
-import com.qualcomm.vuforia.CameraCalibration;
-import com.qualcomm.vuforia.CameraDevice;
-import com.qualcomm.vuforia.Matrix44F;
-import com.qualcomm.vuforia.Renderer;
-import com.qualcomm.vuforia.State;
-import com.qualcomm.vuforia.Tool;
-import com.qualcomm.vuforia.Vec2I;
-import com.qualcomm.vuforia.VideoBackgroundConfig;
-import com.qualcomm.vuforia.VideoMode;
-import com.qualcomm.vuforia.Vuforia;
-import com.qualcomm.vuforia.Vuforia.UpdateCallbackInterface;
+import com.vuforia.CameraCalibration;
+import com.vuforia.CameraDevice;
+import com.vuforia.Matrix44F;
+import com.vuforia.Renderer;
+import com.vuforia.State;
+import com.vuforia.Tool;
+import com.vuforia.Vec2I;
+import com.vuforia.VideoBackgroundConfig;
+import com.vuforia.VideoMode;
+import com.vuforia.Vuforia;
+import com.vuforia.Vuforia.UpdateCallbackInterface;
 
 public class ApplicationSession implements UpdateCallbackInterface
 {
